@@ -33,11 +33,6 @@ class Connection
         return $this->pdo;
     }
 
-    public function getDSN(): string
-    {
-        return $this->dsn;
-    }
-
     public function query_data(string $sql, array $params = []): PDOStatement
     {
         $stmt = $this->pdo->prepare($sql);
