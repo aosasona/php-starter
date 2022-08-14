@@ -1,6 +1,6 @@
 <?php
 
-namespace Trulyao\PhpJwt\Services;
+namespace Trulyao\PhpStarter\Services;
 
 class Connection {
     private $pdo;

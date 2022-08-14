@@ -1,23 +1,23 @@
 {
-    "name": "trulyao/php-jwt",
-    "description": "A simple JWT based authentication system in PHP",
-    "type": "project",
-    "require": {
-        "trulyao/php-router": "^1.0",
-        "vlucas/phpdotenv": "^5.4",
-        "firebase/php-jwt": "^6.3",
-      "ext-pdo": "*"
-    },
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Trulyao\\PhpJwt\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Ayodeji O.",
-            "email": "osasonaayodeji1@gmail.com"
-        }
-    ]
+  "name": "trulyao/php-jwt",
+  "description": "A PHP starter project",
+  "type": "project",
+  "require": {
+    "trulyao/php-router": "^1.0",
+    "vlucas/phpdotenv": "^5.4",
+    "firebase/php-jwt": "^6.3",
+    "ext-pdo": "*"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Trulyao\\PhpStarter\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ayodeji O.",
+      "email": "osasonaayodeji1@gmail.com"
+    }
+  ]
 }

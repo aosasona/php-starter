@@ -1,6 +1,6 @@
 <?php
 
-namespace Trulyao\PhpJwt\Controllers;
+namespace Trulyao\PhpStarter\Controllers;
 
 use Exception;
 use Trulyao\PhpRouter\Helper\Response as Response;

@@ -7,9 +7,9 @@ require("vendor/autoload.php");
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-require_once("src/Services/Connection.php");
+use \Trulyao\PhpStarter\Services\Connection as Connection;
 
-if(strtolower(php_sapi_name()) !== "cli") {
+if (strtolower(php_sapi_name()) !== "cli") {
     die("This script can only be run from the command line");
 }
 
@@ -27,7 +27,8 @@ switch ($main_arg) {
 /**
  * Make a fresh migration
  */
-function migrate_dev() {
+function migrate_dev()
+{
     try {
         $connection = new Connection();
         $pdo = $connection->getPDO();
@@ -66,7 +67,6 @@ function migrate_dev() {
         }
 
         echo "Migration complete\n";
-
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage() . "\n";
     }

@@ -3,18 +3,30 @@
 require("vendor/autoload.php");
 
 use Trulyao\PhpRouter\Router as Router;
-use Trulyao\PhpJwt\Controllers\AuthController as AuthController;
+use Trulyao\PhpRouter\Helper\Response as Response;
+use Trulyao\PhpRouter\Helper\Request as Request;
+use Trulyao\PhpStarter\Controllers\AuthController as AuthController;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
+// Controllers
+$AuthController = new AuthController();
+
+// Router
 $router = new Router(__DIR__ . "/src", "v1");
 
-$router->post("/auth/login", [new AuthController(), "sign_in"]);
+$router->get("/", function (Request $request, Response $response) {
+    return $response->send([
+        "message" => "Welcome to the API"
+    ]);
+});
 
-$router->post("/auth/signup", [new AuthController(), "sign_up"]);
+$router->post("/auth/login", [$AuthController, "sign_in"]);
 
-$router->get("/phpmyadmin", function($request, $response) {
+$router->post("/auth/signup", [$AuthController, "sign_up"]);
+
+$router->get("/phpmyadmin", function (Request $request, Response $response) {
     return $response->redirect("http://localhost:2083");
 });
 
