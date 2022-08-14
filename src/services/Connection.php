@@ -1,12 +1,17 @@
 <?php
 
-namespace Trulyao\PhpStarter\Services;
+namespace Trulyao\PhpJwt\Services;
 
-class Connection {
+use PDO;
+use PDOStatement;
+
+class Connection
+{
     private $pdo;
     private $dsn;
 
-    public function __construct() {
+    public function __construct()
+    {
         [$host, $port, $user, $pass, $db] = [
             $_ENV['MYSQL_HOST'],
             $_ENV['MYSQL_PORT'],
@@ -31,5 +36,23 @@ class Connection {
     public function getDSN(): string
     {
         return $this->dsn;
+    }
+
+    public function query_data(string $sql, array $params = []): PDOStatement
+    {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
+
+    public function select_data(string $sql, array $params = []): array
+    {
+        $stmt = $this->query_data($sql, $params);
+        return $stmt->fetchAll();
+    }
+
+    public function lastInsertId(): int
+    {
+        return $this->pdo->lastInsertId();
     }
 }
