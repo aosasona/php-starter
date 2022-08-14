@@ -1,5 +1,7 @@
 <?php
 
+namespace Trulyao\PhpJwt\Services;
+
 class Connection {
     private $pdo;
     private $dsn;
