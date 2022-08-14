@@ -10,13 +10,9 @@ $dotenv->safeLoad();
 
 $router = new Router(__DIR__ . "/src", "v1");
 
-$router->post("/auth/login", function ($req, $res) {
-    return AuthController::sign_in($req, $res);
-});
+$router->post("/auth/login", [new AuthController(), "sign_in"]);
 
-$router->post("/auth/signup", function ($req, $res) {
-    return AuthController::sign_up($req, $res);
-});
+$router->post("/auth/signup", [new AuthController(), "sign_up"]);
 
 $router->get("/phpmyadmin", function($request, $response) {
     return $response->redirect("http://localhost:2083");
