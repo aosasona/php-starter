@@ -1,6 +1,6 @@
 <?php
 
-namespace Trulyao\PhpJwt\Services;
+namespace Trulyao\PhpStarter\Services;
 
 use PDO;
 use PDOStatement;
@@ -31,6 +31,11 @@ class Connection
     public function getPDO(): PDO
     {
         return $this->pdo;
+    }
+
+    public function getDSN(): string
+    {
+        return $this->dsn;
     }
 
     public function query_data(string $sql, array $params = []): PDOStatement
