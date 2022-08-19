@@ -2,6 +2,12 @@
 
 This is a PHP starter project. It allows you to quickly set up a dockerized PHP project loaded with the bare minimum you need. It also includes a good routing package suitable for APIs and static sites; the `.htaccess` file has been written to match this. Just fork this repository and start coding!
 
+# Create a new project
+
+```bash
+composer create-project trulyao/php-starter hello-world
+```
+
 ## Requirements
 - PHP 7.1+
 - Docker and Docker Compose
