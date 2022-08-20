@@ -36,7 +36,7 @@ $ php cli.php migrate:fresh
 
 **Note**: This will ONLY work in the CLI.
 
-You can also edit the `api.conf` file to change your Apache configuration. The installed router depends on your `.htaccess` file, be careful with that.
+You can also edit the `api.conf` file to change your Apache configuration. The installed router depends on your `.htaccess` file, be careful with that. Some headers will not come through depending on your Apache configuration, you would need to enable them in your configuration file.
 
 ## Access
 - Web (API or Application): `http://localhost:8085`
