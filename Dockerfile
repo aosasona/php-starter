@@ -25,6 +25,4 @@ RUN apt-get update && apt-get install -y libpq-dev \
 #    a2ensite web && \
 #    service apache2 restart  ---- this is to get rid of the Apache2 domain name-related error in dev
 
-EXPOSE 80
-
 CMD ["start-web"]
