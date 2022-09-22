@@ -28,14 +28,6 @@ $ docker-compose up -d
 
 To force-rebuild the images, use the included `Setup.sh` script.
 
-## Usage
-To create your own migrations, add it to the `cli.php` file and use the following command to perform the migration (it is also run while your container is building):
-```bash
-$ php cli.php migrate:fresh
-```
-
-**Note**: This will ONLY work in the CLI.
-
 You can also edit the `api.conf` file to change your Apache configuration. The installed router depends on your `.htaccess` file, be careful with that. Some headers will not come through depending on your Apache configuration, you would need to enable them in your configuration file.
 
 ## Access

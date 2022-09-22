@@ -15,11 +15,7 @@
   },
   "authors": [
     {
-      "name": "Ayodeji O.",
-      "email": "ayodejiosasona@icloud.com"
+      "name": "Ayodeji O."
     }
-  ],
-  "scripts": {
-    "migrate": "php cli.php migrate:dev"
-  }
+  ]
 }
